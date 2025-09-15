@@ -382,6 +382,99 @@
       font-size: 16px;
     }
   }
+   .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 18px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr; /* stack on small screens */
+    }
+  }
+
+  /* ✅ Form */
+  .contact-form {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.35);
+    color: #e6eef6;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .form-footer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .btn:hover {
+    background: #ff8f3c;
+  }
+
+  .alt-contact {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .form-msg {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* ✅ Sidebar */
+  .card-sm {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .quick-facts {
+    color: var(--muted);
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .download-link {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+  }
     </style>
   </head>
   <body>
@@ -722,109 +815,49 @@
           </div>
         </section>
 
-        <section id="contact">
-          <h2 style="margin: 0 0 12px">Contact & Puppy Application</h2>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: 1fr 360px;
-              gap: 18px;
-              align-items: start;
-            "
-          >
-            <form
-              onsubmit="submitForm(event)"
-              style="
-                background: var(--card);
-                padding: 18px;
-                border-radius: 12px;
-              "
-            >
-              <label style="display: block; margin-bottom: 8px"
-                >Full name
-                <input
-                  required
-                  name="name"
-                  type="text"
-                  style="
-                    width: 100%;
-                    margin-top: 6px;
-                    padding: 10px;
-                    border-radius: 8px;
-                    border: 0;
-                    background: rgba(0, 0, 0, 0.35);
-                    color: #e6eef6;
-                  "
-                />
-              </label>
-              <label style="display: block; margin-bottom: 8px"
-                >Email
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  style="
-                    width: 100%;
-                    margin-top: 6px;
-                    padding: 10px;
-                    border-radius: 8px;
-                    border: 0;
-                    background: rgba(0, 0, 0, 0.35);
-                    color: #e6eef6;
-                  "
-                />
-              </label>
-              <label style="display: block; margin-bottom: 8px"
-                >Message
-                <textarea
-                  name="message"
-                  rows="4"
-                  style="
-                    width: 100%;
-                    margin-top: 6px;
-                    padding: 10px;
-                    border-radius: 8px;
-                    border: 0;
-                    background: rgba(0, 0, 0, 0.35);
-                    color: #e6eef6;
-                  "
-                ></textarea>
-              </label>
-              <div style="display: flex; gap: 10px; align-items: center">
-                <button type="submit" class="btn">Send Inquiry</button>
-                <div style="color: var(--muted); font-size: 13px">
-                  Or call: +2348099046722
-                </div>
-              </div>
-              <div
-                id="formmsg"
-                style="margin-top: 10px; color: var(--muted); font-size: 13px"
-              ></div>
-            </form>
+       <section id="contact">
+  <h2 style="margin: 0 0 12px">Contact & Puppy Application</h2>
 
-            <aside class="card-sm">
-              <strong>Quick facts</strong>
-              <ul
-                style="color: var(--muted); margin-top: 10px; font-size: 13px"
-              >
-                <li>Health screens provided at sale.</li>
-                <li>Microchipped & vaccinated before pickup.</li>
-                <li>Transport assistance available worldwide.</li>
-              </ul>
-              <div style="margin-top: 12px">
-                <a
-                  href="#"
-                  style="
-                    text-decoration: none;
-                    color: var(--accent);
-                    font-weight: 600;
-                  "
-                  >Download pedigree (PDF)</a
-                >
-              </div>
-            </aside>
-          </div>
-        </section>
+  <div class="contact-grid">
+    <!-- ✅ Form -->
+    <form onsubmit="submitForm(event)" class="contact-form">
+      <label>
+        Full name
+        <input required name="name" type="text" />
+      </label>
+
+      <label>
+        Email
+        <input required name="email" type="email" />
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="4"></textarea>
+      </label>
+
+      <div class="form-footer">
+        <button type="submit" class="btn">Send Inquiry</button>
+        <div class="alt-contact">Or call: +2348099046722</div>
+      </div>
+
+      <div id="formmsg" class="form-msg"></div>
+    </form>
+
+    <!-- ✅ Sidebar -->
+    <aside class="card-sm">
+      <strong>Quick facts</strong>
+      <ul class="quick-facts">
+        <li>Health screens provided at sale.</li>
+        <li>Microchipped & vaccinated before pickup.</li>
+        <li>Transport assistance available worldwide.</li>
+      </ul>
+      <div style="margin-top: 12px">
+        <a href="#" class="download-link">Download pedigree (PDF)</a>
+      </div>
+    </aside>
+  </div>
+</section>
       </main>
 
       <footer>
