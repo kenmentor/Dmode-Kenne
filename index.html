@@ -314,57 +314,94 @@
       .social-btn.instagram:hover {
         color: #e1306c;
       }
+      .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap; /* 🔑 allows wrapping on small screens */
+    gap: 12px;
+  }
+
+  .logo-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #111, #101215);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-weight: 700;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  /* 🔽 Mobile optimization */
+  @media (max-width: 600px) {
+    .site-header {
+      flex-direction: column; /* stack everything */
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      justify-content: flex-start;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      font-size: 16px;
+    }
+  }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <header
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 18px;
-        "
-      >
-        <div style="display: flex; gap: 12px; align-items: center">
-          <div
-            style="
-              width: 56px;
-              height: 56px;
-              border-radius: 12px;
-              background: linear-gradient(135deg, #111, #101215);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-weight: 700;
-              font-size: 18px;
-              color: var(--accent);
-            "
-          >
-            DM
-          </div>
-          <div>
-            <div style="font-weight: 700">Dmode Rottweilers</div>
-            <div style="font-size: 12px; color: var(--muted)">
-              Champion bloodlines • Health tested
-            </div>
-          </div>
-        </div>
-        <nav style="display: flex; gap: 12px; align-items: center">
-          <a href="#about" style="color: var(--muted); text-decoration: none"
-            >About</a
-          >
-          <a href="#dogs" style="color: var(--muted); text-decoration: none"
-            >Dogs</a
-          >
-          <a href="#litters" style="color: var(--muted); text-decoration: none"
-            >Litters</a
-          >
-          <a href="#contact" style="color: var(--muted); text-decoration: none"
-            >Contact</a
-          >
-        </nav>
-      </header>
+   <header class="site-header">
+  <div class="logo-box">
+    DM
+  </div>
+  <div class="brand-text">
+    <div class="brand-name">Dmode Rottweilers</div>
+    <div class="brand-tagline">Champion bloodlines • Health tested</div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#dogs">Dogs</a>
+    <a href="#litters">Litters</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
       <main>
         <section class="hero" aria-label="Hero">
