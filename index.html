@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dmode Kenne — Trusted Rottweiler Breeders</title>
+    <meta
+      name="description"
+      content="Dmode Kennel — Responsible Rottweiler breeding. Champions, health-tested lines, and well-socialized puppies."
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --accent: #b53c2a; /* warm rust */
+        --dark: #0f1720;
+        --muted: #94a3b8;
+        --glass: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.03);
+        --radius: 16px;
+        --maxw: 1100px;
+        --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: var(--ff-sans);
+        background: linear-gradient(180deg, #071018 0%, #0b1220 100%);
+        color: #e6eef6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 36px auto;
+        padding: 28px;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+        min-height: 420px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.25)
+        );
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
+      }
+      .hero .bg {
+
+        grid-column: 1 / -1;
+        grid-row: 1/2;
+        height: 35% ;
+        position: absolute; 
+        top: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center;
+        filter: contrast(1.05) saturate(1.05);
+        
+      }
+      .bg{
+        opacity: 0.2;
+      }
+      .hero .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(3, 6, 10, 0.35),
+          rgba(3, 6, 10, 0.6)
+        );
+      }
+      .hero-content {
+        position: relative;
+        padding: 48px;
+        z-index: 4;
+        align-self: center;
+      }
+      h1 {
+        font-size: 40px;
+        margin: 0 0 12px;
+        letter-spacing: -0.5px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 0 0 18px;
+        font-size: 15px;
+        max-width: 56ch;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+      }
+      .btn {
+        background: var(--accent);
+        color: white;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 0;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(181, 60, 42, 0.18);
+      }
+      .btn.ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: var(--muted);
+      }
+
+      /* Card on right */
+      .card {
+        background: var(--card);
+        border-radius: 14px;
+        padding: 20px;
+        margin: 28px;
+        align-self: center;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+      }
+      .stat {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .stat strong {
+        font-size: 20px;
+      }
+
+      /* Sections */
+      section {
+        margin: 36px 0;
+        padding: 0 6px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card-sm {
+        background: var(--glass);
+        padding: 18px;
+        border-radius: 12px;
+      }
+      .dogs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .dog-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .dog-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      .dog-card .meta {
+        padding: 12px;
+      }
+      .pill {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      /* Gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.28s;
+      }
+      .gallery img:hover {
+        transform: scale(1.03);
+      }
+
+      /* Testimonials */
+      .testi {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      footer {
+        padding: 18px 0;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* Modal lightbox */
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 6, 23, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+      .modal img {
+        max-width: 92vw;
+        max-height: 88vh;
+        border-radius: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding-bottom: 18px;
+        }
+        .hero .bg {
+          display: block;
+        }
+        .wrap {
+          padding: 18px;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .social-icons {
+        margin-top: 24px;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10; /* make sure it sits above overlays */
+      }
+
+      .social-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-size: 1.3rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+        cursor: pointer; /* makes it clickable */
+        pointer-events: auto; /* ensures clicks are enabled */
+        z-index: 20;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+      }
+
+      .social-btn.whatsapp:hover {
+        color: #25d366;
+      }
+      .social-btn.tiktok:hover {
+        color: #ff0050;
+      }
+      .social-btn.twitter:hover {
+        color: #1da1f2;
+      }
+      .social-btn.facebook:hover {
+        color: #1877f2;
+      }
+      .social-btn.instagram:hover {
+        color: #e1306c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 18px;
+        "
+      >
+        <div style="display: flex; gap: 12px; align-items: center">
+          <div
+            style="
+              width: 56px;
+              height: 56px;
+              border-radius: 12px;
+              background: linear-gradient(135deg, #111, #101215);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 700;
+              font-size: 18px;
+              color: var(--accent);
+            "
+          >
+            DM
+          </div>
+          <div>
+            <div style="font-weight: 700">Dmode Rottweilers</div>
+            <div style="font-size: 12px; color: var(--muted)">
+              Champion bloodlines • Health tested
+            </div>
+          </div>
+        </div>
+        <nav style="display: flex; gap: 12px; align-items: center">
+          <a href="#about" style="color: var(--muted); text-decoration: none"
+            >About</a
+          >
+          <a href="#dogs" style="color: var(--muted); text-decoration: none"
+            >Dogs</a
+          >
+          <a href="#litters" style="color: var(--muted); text-decoration: none"
+            >Litters</a
+          >
+          <a href="#contact" style="color: var(--muted); text-decoration: none"
+            >Contact</a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-label="Hero">
+          <div
+            class="bg"
+            style="background-image: url('./image/adult2.jpg')"
+          > </div>
+          <div class="overlay"></div>
+
+          <div class="hero-content">
+            <h1>Dmode Kennel</h1>
+            <p class="lead">
+              Breeding well-tempered, healthy Rottweilers with champion
+              bloodlines. Health-screened parents, early socialization, and
+              lifetime support for our puppies.
+            </p>
+            <div class="cta">
+              <button class="btn" onclick="scrollToSection('litters')">
+                View Litters
+              </button>
+              <button class="btn ghost" onclick="scrollToSection('contact')">
+                Get In Touch
+              </button>
+            </div>
+            <div style="margin-top: 18px; color: var(--muted); font-size: 13px">
+              Professionally raised · Health checks: OFA, CERF, DNA
+            </div>
+          </div>
+          <div class="social-icons">
+            <a
+              href="https://wa.me/2348099046722"
+              target="_blank"
+              class="social-btn whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://tiktok.com/@dmode.empire"
+              target="_blank"
+              class="social-btn tiktok"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a
+              href="https://twitter.com/yourkennel"
+              target="_blank"
+              class="social-btn twitter"
+            >
+            <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://facebook.com/yourkennel"
+              target="_blank"
+              class="social-btn facebook"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              href="https://instagram.com/yourkennel"
+              target="_blank"
+              class="social-btn instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+
+          <aside class="card" style="z-index: 5">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+              "
+            >
+              <div>
+                <div style="color: var(--muted); font-size: 12px">
+                  Kennel since
+                </div>
+                <div style="font-weight: 700">2023</div>
+              </div>
+              <div style="text-align: right">
+                <div style="color: var(--muted); font-size: 12px">Dogs</div>
+                <div style="font-weight: 700">50</div>
+              </div>
+            </div>
+            <div
+              style="
+                height: 10px;
+                background: linear-gradient(90deg, var(--accent), #ff8a66);
+                border-radius: 999px;
+                margin: 12px 0;
+              "
+            ></div>
+            <div style="font-size: 13px; color: var(--muted)">
+              Puppies raised in-home, early socialization, full health guarantee
+              for 2 years, and lifetime breeder support.
+            </div>
+          </aside>
+        </section>
+
+        <section id="about">
+          <h2 style="margin: 0 0 12px">About Us</h2>
+          <div
+            style="
+              display: flex;
+              gap: 18px;
+              align-items: flex-start;
+              flex-wrap: wrap;
+            "
+          >
+            <div style="flex: 1; min-width: 280px">
+              <p style="color: var(--muted)">
+                Dmode Kennel is a small family kennel focused on producing
+                top-quality Rottweilers with excellent temperaments and sound
+                health. We work with health-tested adults, maintain transparent
+                pedigrees, and place our puppies in carefully screened homes.
+              </p>
+              <ul style="color: var(--muted); margin-top: 12px">
+                <li>Health: OFA hip/elbow, cardiac screening, eye exams.</li>
+                <li>
+                  Temperament: Early socialization & basic training before
+                  adoption.
+                </li>
+                <li>
+                  Support: Lifetime breeder support and microchip registration.
+                </li>
+              </ul>
+            </div>
+            <div style="width: 360px">
+              <div class="card-sm">
+                <strong>Next litter expected:</strong>
+                <div style="margin-top: 8px; color: var(--muted)">
+                  June 2025 • Limited spots on waitlist
+                </div>
+                <div style="margin-top: 12px">
+                  <button class="btn" onclick="scrollToSection('contact')">
+                    Join Waitlist
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dogs">
+          <h2 style="margin: 0 0 12px">Our Dogs</h2>
+          <div class="dogs">
+            <article class="dog-card">
+              <img src="./image/adult2.jpg" alt="Rottweiler adult" />
+              <div class="meta">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <strong>Thor von Blackridge</strong>
+                    <div style="color: var(--muted); font-size: 13px">
+                      Stud • Champion
+                    </div>
+                  </div>
+                  <div class="pill">OFA Hips: Good</div>
+                </div>
+                <p
+                  style="color: var(--muted); font-size: 13px; margin-top: 8px"
+                >
+                  Powerful, steady temperament. Proven sire with working titles
+                  and clear health screens.
+                </p>
+              </div>
+            </article>
+
+            <article class="dog-card">
+              <img src="./image/adult3.jpg" alt="Rottweiler adult" />
+              <div class="meta">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <strong>Greta Blackridge</strong>
+                    <div style="color: var(--muted); font-size: 13px">
+                      Dam • Family-focused
+                    </div>
+                  </div>
+                  <div class="pill">Eyes: Clear</div>
+                </div>
+                <p
+                  style="color: var(--muted); font-size: 13px; margin-top: 8px"
+                >
+                  Nurturing mother, excellent social skills, and calm under new
+                  environments.
+                </p>
+              </div>
+            </article>
+
+            <article class="dog-card">
+              <img src="./image/adult4.jpg" alt="Rottweiler adult" />
+              <div class="meta">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <strong>Kaiser II</strong>
+                    <div style="color: var(--muted); font-size: 13px">
+                      Working lines
+                    </div>
+                  </div>
+                  <div class="pill">DNA: Clear</div>
+                </div>
+                <p
+                  style="color: var(--muted); font-size: 13px; margin-top: 8px"
+                >
+                  Focused, athletic — excels in protection and obedience work.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="litters">
+          <h2 style="margin: 0 0 12px">Current & Upcoming Litters</h2>
+          <div style="display: flex; gap: 18px; flex-wrap: wrap">
+            <div style="flex: 1; min-width: 280px">
+              <div class="card-sm">
+                <h3 style="margin: 0">May 2025 Litter</h3>
+                <div style="color: var(--muted); margin-top: 8px">
+                  4 males • 3 females — 2 spots still available
+                </div>
+                <p style="color: var(--muted); font-size: 13px">
+                  Parents: Thor von Blackridge x Greta Blackridge • Pedigree and
+                  health documents available on request.
+                </p>
+                <div style="margin-top: 10px">
+                  <button
+                    class="btn"
+                    onclick="contactOnWhatsApp(2348099046722 )"
+                  >
+                    Reserve a Puppy
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div style="width: 480px">
+              <div class="gallery" aria-hidden="false">
+                <img
+                  src="./image/puppy5.jpg"
+                  alt="puppy"
+                  onclick="openModal(this.src)"
+                />
+                <img
+                  src="./image/puppy2.jpg"
+                  alt="puppy"
+                  onclick="openModal(this.src)"
+                />
+                <img
+                  src="./image/puppy4.jpg"
+                  alt="puppy"
+                  onclick="openModal(this.src)"
+                />
+                <img
+                  src="./image//images (4).jpg"
+                  alt="puppy"
+                  onclick="openModal(this.src)"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonials">
+          <h2 style="margin: 0 0 12px">Testimonials</h2>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <div class="card-sm" style="flex: 1; min-width: 260px">
+              <div class="testi">
+                <img
+                  class="avatar"
+                  src="./image/testininia2.jpg"
+                  alt="owner"
+                />
+                <div>
+                  <strong>Amaka J.</strong>
+                  <div style="color: var(--muted); font-size: 13px">
+                    "We trained Max for family protection  calm, intelligent,
+                    and loving. Breeder was supportive every step."
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-sm" style="flex: 1; min-width: 260px">
+              <div class="testi">
+                <img
+                  class="avatar"
+                  src="./image//testimonia1.jpg"
+                  alt="owner"
+                />
+                <div>
+                  <strong>Mentor.</strong>
+                  <div style="color: var(--muted); font-size: 13px">
+                    "The dogs grow realy big and up to standard love this kennel
+                    "
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 style="margin: 0 0 12px">Contact & Puppy Application</h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 360px;
+              gap: 18px;
+              align-items: start;
+            "
+          >
+            <form
+              onsubmit="submitForm(event)"
+              style="
+                background: var(--card);
+                padding: 18px;
+                border-radius: 12px;
+              "
+            >
+              <label style="display: block; margin-bottom: 8px"
+                >Full name
+                <input
+                  required
+                  name="name"
+                  type="text"
+                  style="
+                    width: 100%;
+                    margin-top: 6px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 0;
+                    background: rgba(0, 0, 0, 0.35);
+                    color: #e6eef6;
+                  "
+                />
+              </label>
+              <label style="display: block; margin-bottom: 8px"
+                >Email
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  style="
+                    width: 100%;
+                    margin-top: 6px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 0;
+                    background: rgba(0, 0, 0, 0.35);
+                    color: #e6eef6;
+                  "
+                />
+              </label>
+              <label style="display: block; margin-bottom: 8px"
+                >Message
+                <textarea
+                  name="message"
+                  rows="4"
+                  style="
+                    width: 100%;
+                    margin-top: 6px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 0;
+                    background: rgba(0, 0, 0, 0.35);
+                    color: #e6eef6;
+                  "
+                ></textarea>
+              </label>
+              <div style="display: flex; gap: 10px; align-items: center">
+                <button type="submit" class="btn">Send Inquiry</button>
+                <div style="color: var(--muted); font-size: 13px">
+                  Or call: +2348099046722
+                </div>
+              </div>
+              <div
+                id="formmsg"
+                style="margin-top: 10px; color: var(--muted); font-size: 13px"
+              ></div>
+            </form>
+
+            <aside class="card-sm">
+              <strong>Quick facts</strong>
+              <ul
+                style="color: var(--muted); margin-top: 10px; font-size: 13px"
+              >
+                <li>Health screens provided at sale.</li>
+                <li>Microchipped & vaccinated before pickup.</li>
+                <li>Transport assistance available worldwide.</li>
+              </ul>
+              <div style="margin-top: 12px">
+                <a
+                  href="#"
+                  style="
+                    text-decoration: none;
+                    color: var(--accent);
+                    font-weight: 600;
+                  "
+                  >Download pedigree (PDF)</a
+                >
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        © Dmode Rottweilers  Responsible Breeding • Images via Unsplash
+      </footer>
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+      <img id="modalImg" src="" alt="open image" />
+    </div>
+
+    <script>
+      function contactOnWhatsApp(
+        phone,
+        message = `Hello! I’m interested in reserving a Rottweiler puppy from your kennel.  
+Could you please share the available puppies, prices, and the next litter details?  
+Thank you!
+`
+      ) {
+        // phone: must be in international format (e.g. 2348012345678 for Nigeria)
+        // message: optional pre-filled message
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(
+          message
+        )}`;
+        window.open(url, "_blank");
+      }
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return window.scrollTo({ top: 0, behavior: "smooth" });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function openModal(src) {
+        const m = document.getElementById("modal");
+        const img = document.getElementById("modalImg");
+        img.src = src.replace("/400x300/", "/1200x900/");
+        m.style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      function submitForm(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const name = form.querySelector("[name='name']").value;
+        const email = form.querySelector("[name='email']").value;
+        const messageInput = form.querySelector("[name='message']").value;
+
+        // Structured WhatsApp message
+        const message = `🐶 Puppy Inquiry
+-----------------------------
+👤 Name: ${name}
+📧 Email: ${email}
+💬 Message: ${messageInput}
+-----------------------------
+Please let me know about availability and next steps.`;
+
+        // Replace with your WhatsApp number in international format
+        const phone = "2348099046722";
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with pre-filled message
+        window.open(url, "_blank");
+
+        // Feedback to user
+        document.getElementById("formmsg").textContent =
+          "Redirecting you to WhatsApp...";
+        form.reset();
+      }
+
+      // tiny progressive reveal
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("section").forEach((s, i) => {
+          s.style.opacity = 0;
+          s.style.transform = "translateY(10px)";
+          setTimeout(() => {
+            s.style.transition = "all 600ms cubic-bezier(.2,.9,.3,1)";
+            s.style.opacity = 1;
+            s.style.transform = "none";
+          }, 120 * i);
+        });
+      });
+    </script>
+  </body>
+</html>
